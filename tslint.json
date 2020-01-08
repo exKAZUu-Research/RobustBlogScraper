@@ -1,0 +1,47 @@
+{
+  "extends": ["tslint-microsoft-contrib", "tslint-config-prettier"],
+  "rules": {
+    // to enable rules
+    "no-namespace": true, // please use const object instead of 'module' and 'namespace'
+    // to configure enabled rules
+    "await-promise": [true, "Bluebird"], // because we import bluebird as Bluebird
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
+    "no-implicit-dependencies": [true, "dev"],
+    "no-shadowed-variable": [true, { "temporalDeadZone": false }], // because TDZ is not problematic
+    "no-void-expression": [true, "ignore-arrow-function-shorthand"], // because () => console.log(); should be accepted
+    // to disable enabled rules
+    "completed-docs": false,
+    "member-ordering": false,
+    "newline-before-return": false,
+    "no-backbone-get-set-outside-model": false, // because we don't use backbone but this causes errors
+    "no-console": false, // because console.log() should be accepted
+    "no-suspicious-comment": false,
+    "no-string-based-set-timeout": false, // bug? because jest.setTimeout(120000) should be accepted
+    "no-use-before-declare": false, // we should employ newspaper-order rather than this
+    "strict-boolean-expressions": false, // we will enable when https://github.com/palantir/tslint/issues/3279 is solved
+    "typedef": false, // because we want to avoid writing types too many
+    // tslint-microsoft-contrib
+    "import-name": false,
+    "interface-name": false, // c.f. https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#names
+    "missing-jsdoc": false,
+    "mocha-no-side-effect-code": false, // because we use jest instead of mocha
+    "no-any": false,
+    "no-default-export": false,
+    "no-http-string": false, // because we want to scrape blog pages from 'http://xxx'
+    "no-increment-decrement": false,
+    "no-inner-html": false, // because cheerio.html() is not problematic
+    "no-multiline-string": false,
+    "no-relative-imports": false,
+    "no-unsafe-any": false,
+    // tslint-plugin-prettier
+    "prettier": [
+      true,
+      {
+        "printWidth": 120,
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ]
+  },
+  "rulesDirectory": ["tslint-plugin-prettier", "node_modules/tslint-microsoft-contrib"]
+}

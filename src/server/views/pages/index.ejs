@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Robust Web Scraper <%= version %></title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.ja.min.js" defer></script>
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Robust Web Scraper <%= version %></a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <form action="/extract" method="get">
+    <div class="form-group">
+      <label for="url">抽出したいサイトのURL</label>
+      <input type="url" name="url" id="url" class="form-control" required value="http://blog.goo.ne.jp/sehiro1143">
+    </div>
+    <div class="form-group">
+      <label for="service">外部のRSSサービス</label>
+      <select name="service" class="form-control">
+        <option value="" selected>利用しない</option>
+        <option value="feedly">Feedly</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="maxArticles">最大抽出件数（指定した件数を下回る可能性があります）</label>
+      <input type="number" name="maxArticles" id="maxArticles" class="form-control" required value="3">
+    </div>
+    <div class="form-group">
+      <label for="date">日付</label>
+      <div class="form-inline">
+        <div class="input-group date">
+          <input name="fromDate" id="fromDate" class="form-control">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+        <span> 〜 </span>
+        <div class="input-group date">
+          <input name="toDate" id="toDate" class="form-control">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="order">抽出する順序</label>
+      <select name="order" class="form-control">
+        <option value="newest" selected>新しい日付順</option>
+        <option value="oldest">古い日付順</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="minCommonCharacters">指定した文字数以下の共通部分は削除しない</label>
+      <input type="number" name="minCommonCharacters" id="minCommonCharacters" class="form-control" required value="10">
+    </div>
+    <div class="form-group">
+      <label for="img">imgタグの削除</label>
+      <select name="img" class="form-control">
+        <option value="removing" selected>削除する</option>
+        <option value="keeping">削除しない</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">抽出</button>
+  </form>
+</div>
+</body>
+</html>

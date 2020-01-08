@@ -1,0 +1,8 @@
+{
+  "linters": {
+    "{src,__tests__}/**/*.{js,jsx}": ["eslint --fix", "git add"],
+    "{src,__tests__}/**/*[!.d].{ts,tsx}": ["tslint --fix -p tsconfig.json -t verbose", "git add"],
+    "{src,__tests__}/**/*.{d.ts,json}": ["prettier --write", "git add"],
+    "./*.{js,jsx,ts,tsx,json}": ["prettier --write", "git add"]
+  }
+}
