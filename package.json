@@ -55,7 +55,7 @@
     "mkdirp": "0.5.1",
     "moment": "2.21.0",
     "munkres-js": "1.2.2",
-    "puppeteer": "1.2.0",
+    "puppeteer": "1.13.0",
     "request": "2.85.0",
     "request-promise": "4.2.2",
     "sanitize-html": "1.18.2",
