@@ -58,7 +58,7 @@
     "puppeteer": "1.2.0",
     "request": "2.85.0",
     "request-promise": "4.2.2",
-    "sanitize-html": "1.18.2",
+    "sanitize-html": "2.3.2",
     "tslib": "1.9.0",
     "virtual-dom": "2.1.1",
     "xml2js": "0.4.19",
