@@ -53,7 +53,7 @@
     "jsdom": "11.6.2",
     "lodash": "4.17.13",
     "mkdirp": "0.5.1",
-    "moment": "2.21.0",
+    "moment": "2.29.2",
     "munkres-js": "1.2.2",
     "puppeteer": "1.2.0",
     "request": "2.85.0",
