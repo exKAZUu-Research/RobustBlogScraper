@@ -46,7 +46,7 @@
     "body-parser": "1.18.2",
     "cheerio": "1.0.0-rc.2",
     "commander": "2.15.1",
-    "ejs": "2.5.8",
+    "ejs": "3.1.7",
     "express": "4.16.3",
     "fs-readfile-promise": "3.0.1",
     "html-to-vdom": "0.7.0",
